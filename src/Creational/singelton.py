@@ -1,24 +1,21 @@
 class Borg:
-	"making class attributes global"
-	_shared_state = {} #attribute dictionary
+	_shared_state = {}
 	
 	def __init__(self):
 		self.__dict__ = self._shared_state
 
+#This class shares all its attributes among its various instances
 class Singelton(Borg):
-	#This class shares all its attributes among its various instances
-
-	def __init(self, **kwargs):
+	def __init__(self, **kwargs):
 		Borg.__init__(self)
 		self._shared_state.update(kwargs)
 
 	def __str__(self):
-		#returns the attribute dictionary for printing
-	return str(self._shared_state)
+		return str(self._shared_state)
 
-#Let's create a singelton object and add acronym
+if __name__ == "__main__":
+	x = Singelton(HTTP="Hyper Text Transfer Proocol")
+	y = Singelton(SNMP="Simple Network Management Protocol")
 
-x = Singelton(HTTP = "Hyper Text Transfer Proocol")
-print(x)
-y = Singelton(SNMP = "Simple Network Management Protocol")
-print(y)
+	print(x)
+	print(y)
