@@ -1,3 +1,5 @@
+## nested conditionals
+
 Reducing nested code
 Replace conditionals with polymorphism
 Using Strategy pattern
