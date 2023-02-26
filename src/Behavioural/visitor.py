@@ -13,6 +13,7 @@ Consequences
 - The Visitor pattern requires that the objects being visited expose an interface that can be used by the Visitor.
 """
 
+
 class Employee:
     def __init__(self, name, salary):
         self.name = name

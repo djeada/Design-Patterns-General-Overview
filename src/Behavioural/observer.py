@@ -12,10 +12,12 @@ Consequences:
 - Notification can lead to further updates, causing a cascade effect
 """
 
+
 class Subject:
     """
     Represents the subject being observed.
     """
+
     def __init__(self):
         self.observers = []
         self.state = None
@@ -34,16 +36,19 @@ class Subject:
         self.state = state
         self.notify()
 
+
 class Observer:
     """
     Represents an observer that is interested in the state of the subject.
     """
+
     def __init__(self, subject):
         self.subject = subject
         self.subject.attach(self)
 
     def update(self):
         print(f"Observer {id(self)} updated with state {self.subject.state}")
+
 
 if __name__ == "__main__":
     # Create the subject and attach observers

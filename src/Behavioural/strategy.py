@@ -13,6 +13,7 @@ Solution:
 In this example, we demonstrate the use of the Strategy pattern to implement different types of ducks that can quack and fly in different ways, without relying on inheritance. 
 """
 
+
 class Duck:
     def __init__(self, quack_behavior, fly_behavior):
         self.quack_behavior = quack_behavior
@@ -24,44 +25,52 @@ class Duck:
     def fly(self):
         print(self.fly_behavior.fly())
 
+
 class QuackBehavior:
     def quack(self):
         pass
+
 
 class Quack(QuackBehavior):
     def quack(self):
         return "Quack"
 
+
 class Squeak(QuackBehavior):
     def quack(self):
         return "Squeak"
+
 
 class MuteQuack(QuackBehavior):
     def quack(self):
         return "<< Silence >>"
 
+
 class FlyBehavior:
     def fly(self):
         pass
+
 
 class FlyWithWings(FlyBehavior):
     def fly(self):
         return "I'm flying!!"
 
+
 class FlyNoWay(FlyBehavior):
     def fly(self):
         return "<< I can't fly >>"
 
+
 if __name__ == "__main__":
-	simple_duck = Duck(Quack(), FlyWithWings())
-	fancy_duck = Duck(Squeak(), FlyNoWay())
-	silent_duck = Duck(MuteQuack(), FlyWithWings())
+    simple_duck = Duck(Quack(), FlyWithWings())
+    fancy_duck = Duck(Squeak(), FlyNoWay())
+    silent_duck = Duck(MuteQuack(), FlyWithWings())
 
-	simple_duck.fly()
-	simple_duck.quack()
+    simple_duck.fly()
+    simple_duck.quack()
 
-	fancy_duck.fly()
-	fancy_duck.quack()
+    fancy_duck.fly()
+    fancy_duck.quack()
 
-	silent_duck.fly()
-	silent_duck.quack()
+    silent_duck.fly()
+    silent_duck.quack()

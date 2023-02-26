@@ -14,59 +14,71 @@ Consequences:
 * Clients might have to subclass the factories to create their own set of objects.
 """
 
-class GUIFactory:
-  def create_button(self):
-    pass
 
-  def create_text_edit(self):
-      pass
+class GUIFactory:
+    def create_button(self):
+        pass
+
+    def create_text_edit(self):
+        pass
+
 
 class MacOSGUIFactory(GUIFactory):
-  def create_button(self):
-    return MacOSButton()
+    def create_button(self):
+        return MacOSButton()
 
-  def create_text_edit(self):
-      return MacOSTextEdit()
+    def create_text_edit(self):
+        return MacOSTextEdit()
+
 
 class WindowsGUIFactory(GUIFactory):
-  def create_button(self):
-    return WindowsButton()
-  def create_text_edit(self):
-      return WindowsTextEdit()
+    def create_button(self):
+        return WindowsButton()
+
+    def create_text_edit(self):
+        return WindowsTextEdit()
+
 
 class Button:
-  def paint(self):
-    pass
+    def paint(self):
+        pass
+
 
 class MacOSButton(Button):
-  def paint(self):
-    return "MacOSButton"
+    def paint(self):
+        return "MacOSButton"
+
+
 class WindowsButton(Button):
-  def paint(self):
-    return "WindowsButton"
+    def paint(self):
+        return "WindowsButton"
+
 
 class TextEdit:
-  def edit(self):
-    pass
+    def edit(self):
+        pass
+
 
 class MacOSTextEdit(TextEdit):
-  def edit(self):
-    return "MacOSTextEdit"
+    def edit(self):
+        return "MacOSTextEdit"
+
 
 class WindowsTextEdit(TextEdit):
-  def edit(self):
-    return "WindowsTextEdit"
+    def edit(self):
+        return "WindowsTextEdit"
+
 
 if __name__ == "__main__":
-  os = input("Enter 'mac' for MacOS or 'win' for Windows: ")
-  if os == 'mac':
-    gui_factory = MacOSGUIFactory()
-  elif os == 'win':
-    gui_factory = WindowsGUIFactory()
-  else:
-    raise ValueError("Unsupported OS type")
-  button = gui_factory.create_button()
-  text_edit = gui_factory.create_text_edit()
+    os = input("Enter 'mac' for MacOS or 'win' for Windows: ")
+    if os == "mac":
+        gui_factory = MacOSGUIFactory()
+    elif os == "win":
+        gui_factory = WindowsGUIFactory()
+    else:
+        raise ValueError("Unsupported OS type")
+    button = gui_factory.create_button()
+    text_edit = gui_factory.create_text_edit()
 
 
 print(button.paint())

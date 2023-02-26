@@ -1,5 +1,4 @@
-
-'''
+"""
 Example
 We will create a simple text editor that allows users to perform the following operations:
 - Insert text at the current cursor position
@@ -10,26 +9,27 @@ We will create a simple text editor that allows users to perform the following o
 
 We will use the Command pattern to implement these operations.
 
-'''
+"""
+
 
 class TextEditor:
     def __init__(self):
-        self._text = ''
+        self._text = ""
         self._cursor = 0
         self._history = []
 
     def insert(self, text):
-        self._text = self._text[:self._cursor] + text + self._text[self._cursor:]
+        self._text = self._text[: self._cursor] + text + self._text[self._cursor :]
         self._history.append(InsertCommand(self, text))
 
     def delete(self, n):
-        text = self._text[self._cursor:self._cursor + n]
-        self._text = self._text[:self._cursor] + self._text[self._cursor + n:]
+        text = self._text[self._cursor : self._cursor + n]
+        self._text = self._text[: self._cursor] + self._text[self._cursor + n :]
         self._history.append(DeleteCommand(self, text))
 
     def replace(self, n, text):
-        old_text = self._text[self._cursor:self._cursor + n]
-        self._text = self._text[:self._cursor] + text + self._text[self._cursor + n:]
+        old_text = self._text[self._cursor : self._cursor + n]
+        self._text = self._text[: self._cursor] + text + self._text[self._cursor + n :]
         self._history.append(ReplaceCommand(self, old_text, text))
 
     def undo(self):
@@ -41,6 +41,7 @@ class TextEditor:
     def redo(self):
         pass
 
+
 class Command:
     def __init__(self, editor):
         self._editor = editor
@@ -50,6 +51,7 @@ class Command:
 
     def undo(self):
         pass
+
 
 class InsertCommand(Command):
     def __init__(self, editor, text):
@@ -62,6 +64,7 @@ class InsertCommand(Command):
     def undo(self):
         self._editor.delete(len(self._text))
 
+
 class DeleteCommand(Command):
     def __init__(self, editor, text):
         super().__init__(editor)
@@ -72,6 +75,7 @@ class DeleteCommand(Command):
 
     def undo(self):
         self._editor.insert(self._text)
+
 
 class ReplaceCommand(Command):
     def __init__(self, editor, old_text, new_text):

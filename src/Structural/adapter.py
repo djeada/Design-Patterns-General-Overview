@@ -1,4 +1,4 @@
-'''
+"""
 In this example, we have a EuropeanSocketInterface which defines the methods for a European socket. We also have a Socket class which implements the EuropeanSocketInterface. The USASocketInterface is a target interface that specifies the methods required for a US socket.
 
 The Adapter class adapts the Socket class to the USASocketInterface. It has an instance of the Socket class and implements the USASocketInterface. The voltage method is changed to return 110, the live method returns the live value from the Socket class, and the neutral method returns the neutral value from the Socket class.
@@ -6,14 +6,22 @@ The Adapter class adapts the Socket class to the USASocketInterface. It has an i
 Finally, we have the ElectricKettle class which is a client of the USASocketInterface. It takes an instance of the USASocketInterface and boils water using the power from the socket. If the voltage is greater than 110, it prints "Kettle is on fire!" Otherwise, if the live value is 1 and the neutral value is -1, it prints "Coffee time!" Otherwise, it prints "No power."
 
 In the usage section, we create an instance of the Socket class, an instance of the Adapter class, and an instance of the ElectricKettle class. We pass the instance of the Adapter class to the ElectricKettle class and call the boil method. The Adapter class adapts the Socket class to the USASocketInterface, so the ElectricKettle class is able to use the power from the European socket through the adapter.
-'''
+"""
 
 # Adaptee interface
 class EuropeanSocketInterface:
-    def voltage(self): pass
-    def live(self): pass
-    def neutral(self): pass
-    def earth(self): pass
+    def voltage(self):
+        pass
+
+    def live(self):
+        pass
+
+    def neutral(self):
+        pass
+
+    def earth(self):
+        pass
+
 
 # Adaptee
 class Socket(EuropeanSocketInterface):
@@ -29,11 +37,18 @@ class Socket(EuropeanSocketInterface):
     def earth(self):
         return 0
 
+
 # Target interface
 class USASocketInterface:
-    def voltage(self): pass
-    def live(self): pass
-    def neutral(self): pass
+    def voltage(self):
+        pass
+
+    def live(self):
+        pass
+
+    def neutral(self):
+        pass
+
 
 # Adapter
 class Adapter(USASocketInterface):
@@ -49,6 +64,7 @@ class Adapter(USASocketInterface):
     def neutral(self):
         return self.socket.neutral()
 
+
 # Client
 class ElectricKettle:
     def __init__(self, socket):
@@ -62,10 +78,10 @@ class ElectricKettle:
                 print("Coffee time!")
             else:
                 print("No power.")
-                
+
+
 # Usage
 socket = Socket()
 adapter = Adapter(socket)
 kettle = ElectricKettle(adapter)
 kettle.boil()
-

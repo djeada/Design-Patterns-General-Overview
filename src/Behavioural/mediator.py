@@ -9,6 +9,7 @@ Consequences of using the Mediator pattern include avoiding excessive subclassin
 
 """
 
+
 class ChatRoom:
     def __init__(self):
         self.users = []
@@ -21,6 +22,7 @@ class ChatRoom:
             if user != sender:
                 user.receive_message(sender, message)
 
+
 class User:
     def __init__(self, name):
         self.name = name
@@ -30,6 +32,7 @@ class User:
 
     def receive_message(self, sender, message):
         print(f"{self.name} received a message from {sender.name}: {message}")
+
 
 chat_room = ChatRoom()
 

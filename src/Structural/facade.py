@@ -1,8 +1,8 @@
-'''
+"""
 In this example, we have a Computer class that serves as a facade to the complex subsystems of CPU, Memory, and HardDrive. The Computer class encapsulates the logic of starting up the computer, and delegates the actual work to the appropriate subsystems.
 
 The CPU, Memory, and HardDrive classes are all complex and have their own internal workings, but the Computer class provides a simplified interface to start up the computer.
-'''
+"""
 
 
 class CPU:

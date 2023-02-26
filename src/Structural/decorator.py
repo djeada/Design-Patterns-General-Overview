@@ -4,36 +4,45 @@ n this example, TextEditor is the base component that has a write method. TextDe
 In the main program, we first create an instance of the TextEditor and call its write method to write some text to the console. Then, we create a BoldDecorator and an ItalicDecorator, and use them to decorate the original TextEditor. Finally, we create a BoldDecorator that decorates an ItalicDecorator that decorates the original TextEditor, resulting in text that is both bold and italicized.
 """
 
+
 class TextEditor:
     """
     Basic text editor with a write method.
     """
+
     def write(self, text):
         print(f"Writing: {text}")
+
 
 class TextDecorator:
     """
     Base class for text decorators.
     """
+
     def __init__(self, editor):
         self.editor = editor
 
     def write(self, text):
         self.editor.write(text)
 
+
 class BoldDecorator(TextDecorator):
     """
     Decorator that adds bold formatting to text.
     """
+
     def write(self, text):
         self.editor.write(f"<b>{text}</b>")
+
 
 class ItalicDecorator(TextDecorator):
     """
     Decorator that adds italic formatting to text.
     """
+
     def write(self, text):
         self.editor.write(f"<i>{text}</i>")
+
 
 if __name__ == "__main__":
     editor = TextEditor()
