@@ -1,28 +1,39 @@
-import time
+'''
+In this example, there is a Subject abstract class that defines the interface for the RealSubject class that does the actual work. The Proxy class acts as a wrapper around the RealSubject object and intercepts requests to it. The Proxy class checks if the client has access to the RealSubject object and logs the time of the request.
 
-class Producer:
-	def produce(self):
-		print('producer is working hard')
-	
-	def meet(self):
-		print('producer has time to meet you')
+When the client makes a request through the Proxy object, it first checks if the client has access to the RealSubject object. If the access check passes, the request is forwarded to the RealSubject object to handle. The Proxy object also logs the time of the request.
+'''
 
-class Proxy:
-	def __init__(self):
-		self.occupied = 'No'
-		self.producer = None
+from abc import ABC, abstractmethod
 
-	def produce(self):
-		print('Artist checking if producer is available ...')
-		if self.occupied == 'No':
-			self.producer = Producer()
-			time.sleep(2)
-			self.producer.meet()		
-		else:
-			time.sleep(2)
-			print('producer is busy')
+class Subject(ABC):
+    @abstractmethod
+    def request(self):
+        pass
 
-p = Proxy()
-p.produce()
-p.occupied = 'Yes'
-p.produce()
+class RealSubject(Subject):
+    def request(self):
+        print("RealSubject: Handling request.")
+
+class Proxy(Subject):
+    def __init__(self, real_subject: RealSubject) -> None:
+        self._real_subject = real_subject
+
+    def request(self):
+        if self.check_access():
+            self._real_subject.request()
+            self.log_access()
+
+    def check_access(self):
+        print("Proxy: Checking access prior to firing a real request.")
+        return True
+
+    def log_access(self):
+        print("Proxy: Logging the time of request.")
+
+if __name__ == "__main__":
+    real_subject = RealSubject()
+    proxy = Proxy(real_subject)
+
+    proxy.request()
+
