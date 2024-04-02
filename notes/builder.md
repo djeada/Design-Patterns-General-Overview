@@ -1,0 +1,3 @@
+- addSomething().addOther()
+- doesn't have to be like this
+- addOther().addEvenDifferent()
