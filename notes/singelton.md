@@ -1,7 +1,7 @@
 
 ## Singelton
 
-1. Globals are bad
+1. Globals are bad and singleton = global
 2. You are assuming that in the future you will only ever need a single instance of your class
 3. Testing is hard
 
