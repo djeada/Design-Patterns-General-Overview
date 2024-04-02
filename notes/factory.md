@@ -1,1 +1,3 @@
 ### Factory method vs abstract factory
+
+- in one version just prepared cobinations of default parameters for consutructor, BurgerX, BurgerY ... 
