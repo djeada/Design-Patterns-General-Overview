@@ -1,5 +1,7 @@
  # Adapter vs facade vs proxy vs bridge
 
+- FACADE is just an interface, it's not even a pettern, more like a good approach (AN HTTP API abstracts away the network details, data structures are facade)
+
 Design to interfaces
 – Façade – a new interface for a library
 – Adapter – design application to a common interface, adapt other
