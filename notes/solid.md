@@ -14,6 +14,8 @@ The Open/Closed Principle states that a class should be open for extension but c
 
 For example, consider a class that calculates the total cost of an order. If a new discount type needs to be added, the class should be extended to include the new discount calculation logic, rather than modifying the existing code. This ensures that the original functionality remains unchanged and allows for easier maintenance and testing.
 
+- Good example: strategy pattern
+
 3. Liskov Substitution Principle (LSP)
 
 The Liskov Substitution Principle states that a subclass should be substitutable for its base class. In other words, any code that works with the base class should also work with its subclasses without requiring any modification.
