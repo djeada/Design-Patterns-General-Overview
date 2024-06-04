@@ -1,11 +1,6 @@
 # DesignPatterns
-<a href="https://github.com/djeada/Design-Patterns-General-Overview/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/djeada/Design-Patterns-General-Overview"></a>
-<a href="https://github.com/djeada/Design-Patterns-General-Overview/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/djeada/Design-Patterns-General-Overview"></a>
-<a href="https://github.com/djeada/Design-Patterns-General-Overview/blob/master/LICENSE.txt"><img alt="GitHub license" src="https://img.shields.io/github/license/djeada/Design-Patterns-General-Overview"></a>
-<a href=""><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
-</div>
 
-The most popular design patterns and their implementations.
+A comprehensive collection of the most popular design patterns and their implementations, designed to help you understand and apply these essential patterns in your software development projects. This repository covers a wide range of design patterns, providing clear explanations, practical examples, and code implementations in various programming languages.
 
 ## Creational Patterns
 
