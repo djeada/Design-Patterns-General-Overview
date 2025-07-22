@@ -1,3 +1,5 @@
 - addSomething().addOther()
 - doesn't have to be like this
 - addOther().addEvenDifferent()
+- can be replaced by STRUCT WITH DEFAULT FIELDS????
+- Object consists of many complex objects
