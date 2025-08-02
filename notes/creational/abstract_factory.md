@@ -1,0 +1,3 @@
+# Abstract Factory Pattern
+
+...move content from previous abstract_factory note here if exists...

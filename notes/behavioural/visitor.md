@@ -1,0 +1,3 @@
+# Visitor Pattern
+
+...move content from previous visitor note here if exists...

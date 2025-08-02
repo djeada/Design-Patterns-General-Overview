@@ -1,0 +1,3 @@
+# Factory Method Pattern
+
+...move content from previous factory_method note here if exists...

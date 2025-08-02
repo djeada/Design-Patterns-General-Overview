@@ -1,0 +1,3 @@
+# Decorator Pattern
+
+...move content from previous decorator note here if exists...
