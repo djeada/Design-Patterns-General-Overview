@@ -1,0 +1,3 @@
+# Facade Pattern
+
+...move content from previous facade note here if exists...

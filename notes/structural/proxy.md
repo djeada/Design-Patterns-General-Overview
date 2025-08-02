@@ -1,0 +1,3 @@
+# Proxy Pattern
+
+...move content from previous proxy note here if exists...

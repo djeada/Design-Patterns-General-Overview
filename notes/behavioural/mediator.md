@@ -1,0 +1,3 @@
+# Mediator Pattern
+
+...move content from previous mediator note here if exists...

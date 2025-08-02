@@ -1,0 +1,3 @@
+# Bridge Pattern
+
+...move content from previous bridge note here if exists...
